@@ -5,6 +5,7 @@ const source        = require('vinyl-source-stream');
 const browserify    = require('browserify');
 const minifyify     = require('minifyify');
 const babelify      = require('babelify');
+const exec = require('child_process').exec;
 const plumber = require('gulp-plumber');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
@@ -21,6 +22,8 @@ var paths = {
   main_js  : [ 'app/client/index.js' ],
   js       : [ 'app/client/**/*.js*' ],
 };
+
+
 
 gulp.task('css', function() {
   return gulp .src(paths.main_css)
@@ -56,6 +59,14 @@ gulp.task('js', function() {
 });
 
 gulp.task('serve', ['css', 'js' ], function () {
+
+  //Rethinkdb connection
+  let command = 'rethinkdb -d ' + __dirname + "\\data";
+  console.log(command);
+  exec(command, function(err, stdout, stderr){
+    console.log(stdout);
+    console.log(stderr);
+  });
 
   // Generic watch tasks for SASS and Browserify
   gulp.watch(paths.css, [ 'css' ]);
