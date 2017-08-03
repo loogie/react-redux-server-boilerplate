@@ -8,6 +8,6 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/', (req, res)=>{
+router.get('/*', (req, res)=>{
   res.render('index', {title:"Test Title"});
 });
