@@ -16,7 +16,7 @@ const router = (
       <Route component={Home} />
       <Route path="/about" component={About}/>
       <Route exact path="/topics" component={Topics}/>
-      <Route exact path="/topics/:topic" component={Topic}/>
+      <Route path="/topics/:topic" component={Topic}/>
     </App>
   </ConnectedRouter>
 );

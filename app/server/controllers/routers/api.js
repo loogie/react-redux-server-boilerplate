@@ -3,6 +3,7 @@ const router = express.Router();
 const Promise = require('bluebird');
 
 router.post('/', (req, res)=>{
+  console.log("POST API");
   let response = {
     message: "This is a JSON POST response."
   }

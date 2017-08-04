@@ -378,6 +378,11 @@ var _router = require("./router.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log("HISTORY");
+console.log(_store.history);
+console.log("STORE");
+console.log(_store.store);
+
 // render the main component
 _reactDom2.default.render(_react2.default.createElement(
   _reactRedux.Provider,
@@ -460,7 +465,7 @@ var router = _react2.default.createElement(
     _react2.default.createElement(_reactRouter.Route, { component: _Home2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: "/about", component: _About2.default }),
     _react2.default.createElement(_reactRouter.Route, { exact: true, path: "/topics", component: _Topics2.default }),
-    _react2.default.createElement(_reactRouter.Route, { exact: true, path: "/topics/:topic", component: _Topic2.default })
+    _react2.default.createElement(_reactRouter.Route, { path: "/topics/:topic", component: _Topic2.default })
   )
 );
 
