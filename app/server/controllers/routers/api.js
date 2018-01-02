@@ -10,4 +10,11 @@ router.post('/', (req, res)=>{
   res.send(response);
 });
 
+router.post('/create/world/:persons', (req, res)=>{
+  console.log(req.params);
+  let numPersons = parseInt(req.params['persons'], 10);
+
+  console.log(numPersons);
+});
+
 module.exports = router;
